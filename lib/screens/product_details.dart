@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
+import 'package:kcommerce/screens/add_item.dart';
 import 'package:kcommerce/screens/onboard.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -29,7 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         backgroundColor: white,
         elevation: 0.5,
         title: CommonText(
-          text: 'Tutor',
+          text: 'Product Details',
           fontSize: 20,
           fontWeight: semiBold,
         ),
@@ -66,21 +67,21 @@ class _ProductDetailsState extends State<ProductDetails> {
                         child: Image(
                       height: 150,
                       width: size.width / 2,
-                      image: AssetImage(shaver),
+                      image: AssetImage(tcl),
                       fit: BoxFit.cover,
                     )),
                     Center(
                         child: Image(
                       height: 150,
                       width: size.width / 2,
-                      image: AssetImage(shaver),
+                      image: AssetImage(tcl),
                       fit: BoxFit.cover,
                     )),
                     Center(
                         child: Image(
                       height: 150,
                       width: size.width / 2,
-                      image: AssetImage(shaver),
+                      image: AssetImage(tcl),
                       fit: BoxFit.cover,
                     )),
                   ],
@@ -176,8 +177,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                             ),
                           ],
                         ),
-                        
-                     
                       ],
                     ),
                   )
@@ -194,7 +193,9 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: [
             Expanded(
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  navigatePush(destination: const ChatScreen(), context: context);
+                },
                 height: 50,
                 elevation: 0,
                 color: blue2.withOpacity(0.2),

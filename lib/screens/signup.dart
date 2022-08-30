@@ -165,6 +165,8 @@ class CommonTextField extends StatelessWidget {
       required this.controller,
       required this.label,
       this.validator,
+      this.height,
+      this.fontWeight,
       this.obscureText,
       required this.hintText,
       this.onChanged,
@@ -173,23 +175,28 @@ class CommonTextField extends StatelessWidget {
 
   final String label;
   final String hintText;
+  final FontWeight? fontWeight;
   final TextEditingController controller;
   final Widget? suffix;
   final bool? obscureText;
   final Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CommonText(text: label),
+        CommonText(
+          text: label,
+          fontWeight: fontWeight ?? normal,
+        ),
         const SizedBox(
           height: 10,
         ),
         SizedBox(
-          height: 70,
+          height: height ?? 70,
           child: TextFormField(
             controller: controller,
             validator: validator,

@@ -7,7 +7,9 @@ import 'package:kcommerce/screens/add_item.dart';
 import 'package:kcommerce/screens/favorites.dart';
 import 'package:kcommerce/screens/home.dart';
 import 'package:kcommerce/screens/messages.dart';
+import 'package:kcommerce/screens/notification.dart';
 import 'package:kcommerce/screens/onboard.dart';
+import 'package:kcommerce/screens/post_new_item.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -37,7 +39,7 @@ class _LandingPageState extends State<LandingPage> {
           Favorites(),
           const PostNewItem(),
           Messages(),
-          Favorites(),
+          const NotificationScreen()
         ]),
         // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // floatingActionButton: FloatingActionButton(

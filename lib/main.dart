@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
-import 'package:kcommerce/screens/landing_page.dart';
+import 'package:kcommerce/screens/onboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 late SharedPreferences prefs;
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
+
     return MaterialApp(
       title: 'inStore',
       debugShowCheckedModeBanner: false,
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         
         primaryColor: blue2,
       ),
-      home: const LandingPage(),
+      home: const OnBoard(),
     );
   }
 }

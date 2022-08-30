@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
+import 'package:kcommerce/screens/categories.dart';
 import 'package:kcommerce/screens/onboard.dart';
 import 'package:kcommerce/screens/profile.dart';
 
@@ -60,9 +61,11 @@ class _HomeState extends State<Home> {
                   minWidth: 60,
                   height: 60,
                   color: blue2,
-                  onPressed: () {},
+                  onPressed: () {
+                    navigatePush(destination: Categories(), context: context);
+                  },
                   child: Icon(
-                    Icons.display_settings_outlined,
+                    Icons.tune,
                     color: white,
                   ),
                 )
@@ -72,7 +75,7 @@ class _HomeState extends State<Home> {
           preferredSize: const Size.fromHeight(90),
         ),
         elevation: 0.0,
-        leading: GestureDetector( 
+        leading: GestureDetector(
           onTap: () {
             navigatePush(destination: const Profile(), context: context);
           },
@@ -161,8 +164,9 @@ class _HomeState extends State<Home> {
                   onMessagePressed: () {},
                   onTap: () {},
                   size: size),
+                  spaceH,
               FavoriteCard(
-                  onCallPressed: () {},
+                  onCallPressed: () {}, 
                   productImg: tcl,
                   productLocation: 'Greater Accra',
                   productName: 'TCL 40S6500 Smart Android TV - 40" Black',

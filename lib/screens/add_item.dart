@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
 import 'package:kcommerce/screens/onboard.dart';
 
-class PostNewItem extends StatefulWidget {
-  const PostNewItem({Key? key}) : super(key: key);
+class ChatScreen extends StatefulWidget {
+  const ChatScreen({Key? key}) : super(key: key);
 
   @override
-  State<PostNewItem> createState() => _PostNewItemState();
+  State<ChatScreen> createState() => _ChatScreenState();
 }
 
-class _PostNewItemState extends State<PostNewItem> {
+class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -27,7 +27,7 @@ class _PostNewItemState extends State<PostNewItem> {
         ],
         elevation: 0.5,
         title: CommonText(
-          text: 'Post New Item',
+          text: 'Hanniel',
           fontSize: 20,
           fontWeight: semiBold,
         ),
@@ -72,16 +72,17 @@ class _PostNewItemState extends State<PostNewItem> {
             spaceH,
             ChatCard(
                 backColor: blue2,
-                frontColor: blue2, sent:  false,
+                frontColor: blue2,
+                sent: false,
                 size: size,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 text: 'Can we meet',
                 time: 'Today 12:00 pm'),
             ChatCard(
-              sent: false,
+                sent: false,
                 backColor: blue1,
-                frontColor: black, 
+                frontColor: black,
                 size: size,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -393,7 +394,7 @@ class ChatCard extends StatelessWidget {
         ),
         spaceH,
         Row(
-          mainAxisAlignment: mainAxisAlignment, 
+          mainAxisAlignment: mainAxisAlignment,
           crossAxisAlignment: crossAxisAlignment,
           children: [
             sent

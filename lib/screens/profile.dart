@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
 import 'package:kcommerce/screens/add_item.dart';
+import 'package:kcommerce/screens/edit_info.dart';
+import 'package:kcommerce/screens/notification.dart';
 import 'package:kcommerce/screens/onboard.dart';
 import 'package:kcommerce/screens/product_details.dart';
+import 'package:kcommerce/screens/post_new_item.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -21,7 +24,10 @@ class _ProfileState extends State<Profile> {
         backgroundColor: white,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                navigatePush(
+                    destination: const NotificationScreen(), context: context);
+              },
               icon: Icon(
                 Icons.notifications,
                 color: blue2,
@@ -59,7 +65,10 @@ class _ProfileState extends State<Profile> {
                     fontWeight: bold,
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        navigatePush(
+                            destination: EditProfile(), context: context);
+                      },
                       child: CommonText(
                         text: 'Edit Info',
                         textColor: red,
@@ -146,7 +155,8 @@ class _ProfileState extends State<Profile> {
                 productViews: 100,
                 onMorePressed: () {},
                 onTap: () {
-                  navigatePush(destination:const  ProductDetails(), context: context);
+                  navigatePush(
+                      destination: const ProductDetails(), context: context);
                 },
               ),
               spaceH,
@@ -160,8 +170,8 @@ class _ProfileState extends State<Profile> {
                 productViews: 100,
                 onMorePressed: () {},
                 onTap: () {
-                                    navigatePush(destination:const  ProductDetails(), context: context);
-
+                  navigatePush(
+                      destination: const ProductDetails(), context: context);
                 },
               )
             ],

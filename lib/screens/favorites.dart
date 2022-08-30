@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kcommerce/constant.dart';
+import 'package:kcommerce/screens/categories.dart';
 import 'package:kcommerce/screens/onboard.dart';
 
 class Favorites extends StatefulWidget {
@@ -16,7 +17,7 @@ class _FavoritesState extends State<Favorites> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white, 
+        backgroundColor: white,
         elevation: 0.5,
         title: CommonText(
           text: 'Favorites',
@@ -26,82 +27,93 @@ class _FavoritesState extends State<Favorites> {
         centerTitle: true,
         leading: const SizedBox(),
       ),
+      resizeToAvoidBottomInset: false,
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 80,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    height: 60,
-                    width: size.width - 90,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: blue2, width: 0.8),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 5, right: 5),
-                          child: Icon(
-                            Icons.search,
-                            color: blue2,
-                            size: 25,
-                          ),
+        
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 80,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                        height: 60,
+                        width: size.width - 90,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: blue2, width: 0.8),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 5, right: 5),
+                              child: Icon(
+                                Icons.search,
+                                color: blue2,
+                                size: 25,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(top: 4),
+                              height: 60,
+                              width: size.width - 145,
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                    hintText: 'What are you looking for?',
+                                    border: InputBorder.none),
+                              ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(top: 4),
-                          height: 60,
-                          width: size.width - 145,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                hintText: 'What are you looking for?',
-                                border: InputBorder.none),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
+                    spaceW,
+                    Expanded(
+                      child: MaterialButton(
+                        minWidth: 60,
+                        height: 60,
+                        color: blue2,
+                        onPressed: () {
+                            navigatePush(destination: Categories(), context: context);
+                        }, 
+                        child: Icon(
+                          Icons.tune,
+                          color: white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: size.height - 270,
+                child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
+                  separatorBuilder: (context, index) => const SizedBox(
+                    height: 10,
                   ),
-                  MaterialButton(
-                    minWidth: 60,
-                    height: 60,
-                    color: blue2,
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.display_settings_outlined,
-                      color: white,
-                    ),
-                  )
-                ],
+                  itemCount: 2,
+                  itemBuilder: (BuildContext context, int index) {
+                    return FavoriteCard(
+                        onCallPressed: () {},
+                        productImg: tcl,
+                        productLocation: 'Greater Accra',
+                        productName: 'TCL 40S6500 Smart Android TV - 40" Black',
+                        productPrice: 2000,
+                        onMessagePressed: () {},
+                        onTap: () {},
+                        size: size);
+                  },
+                ),
               ),
-            ),
-            SizedBox(
-              height: size.height -270,
-              
-              child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                separatorBuilder: (context, index) => const SizedBox(
-                  height: 10,
-                ), 
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return FavoriteCard(
-                      onCallPressed: () {},
-                      productImg: tcl,
-                      productLocation: 'Greater Accra',
-                      productName: 'TCL 40S6500 Smart Android TV - 40" Black',
-                      productPrice: 2000,
-                      onMessagePressed: () {},
-                      onTap: () {},
-                      size: size);
-                },
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
