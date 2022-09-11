@@ -53,7 +53,7 @@ class _MessagesState extends State<Messages> {
             MessageCard(
               personImage: account,
               personMessage: "New Message",
-              personName: 'Grace  ', 
+              personName: 'Grace  ',  
               time: 'Today',
               onTap: () {
                 navigatePush(destination: const ChatScreen(), context: context);

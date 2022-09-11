@@ -61,7 +61,7 @@ class _OnBoardState extends State<OnBoard> {
                               right: 20),
                           child: CommonText(
                             text:
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas quam mauris dui vitae tempus adipiscing. Tellus ut viverra volutpat vitae morbi lectus. ',
+                                'Welcome to InStore',
                             fontWeight: normal,
                           ),
                         )
@@ -86,7 +86,7 @@ class _OnBoardState extends State<OnBoard> {
                               right: 20),
                           child: CommonText(
                             text:
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas quam mauris dui vitae tempus adipiscing. Tellus ut viverra volutpat vitae morbi lectus. ',
+                                'Buying and selling made easy',
                             fontWeight: normal,
                           ),
                         )
@@ -111,7 +111,7 @@ class _OnBoardState extends State<OnBoard> {
                               right: 20),
                           child: CommonText(
                             text:
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas quam mauris dui vitae tempus adipiscing. Tellus ut viverra volutpat vitae morbi lectus. ',
+                                'Create account or sign in to get started',
                             fontWeight: normal,
                           ),
                         )
@@ -136,7 +136,7 @@ class _OnBoardState extends State<OnBoard> {
                               right: 20),
                           child: CommonText(
                             text:
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas quam mauris dui vitae tempus adipiscing. Tellus ut viverra volutpat vitae morbi lectus. ',
+                                'Buying and selling has never been made this easy.',
                             fontWeight: normal,
                           ),
                         )
@@ -144,7 +144,7 @@ class _OnBoardState extends State<OnBoard> {
                     )),
                   ],
                 )),
-            Positioned(
+            Positioned( 
               bottom: 20,
               left: 10,
               child: currentPage == 3
